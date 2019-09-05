@@ -13,14 +13,14 @@
 const int MAX_LINES = 5000;
 const int MAX_CHARS = 100;
 
-int input (char*, char**);
-void output (char*, char**, int);
-int comparator (char*, char*);
+int input (const char*, char**);
+void output (const char*, const char**, int);
+int comparator (const char*, const char*);
 void q_sort (char**, int);
 int partition (char**, int);
 void swap (char**, char**);
 void check_enter (char*);
-int is_empty (char*);
+int is_empty (const char*);
 
 int main() {
     char name_in_f[] = "/Users/alex/Desktop/XCode/DeD32/DeD32/in.txt";
@@ -44,7 +44,7 @@ int main() {
     return 0;
 }
 
-int input (char* name_f, char** index) {
+int input (const char* name_f, char** index) {
     assert(index != nullptr);
     FILE* F_read = fopen(name_f, "r");
     assert(F_read != nullptr);
@@ -59,7 +59,7 @@ int input (char* name_f, char** index) {
     return lines_num;
 }
 
-void output (char* name_f, char** index, int lines_num) {
+void output (const char* name_f, const char** index, int lines_num) {
     assert(index != nullptr);
     FILE* F_write = fopen(name_f, "w");
     assert(F_write != nullptr);
@@ -68,7 +68,7 @@ void output (char* name_f, char** index, int lines_num) {
     fclose(F_write);
 }
 
-int comparator (char* s1, char* s2) {
+int comparator (const char* s1, const char* s2) {
     assert(s1 != nullptr);
     assert(s2 != nullptr);
     for (; *s1 == *s2; ++s1, ++s2)
@@ -124,7 +124,7 @@ void check_enter (char* s) {
     s[pos + 1] = '\0';
 }
 
-int is_empty (char* s) {
+int is_empty (const char* s) {
     assert(s != nullptr);
     while (*s == '\n' || *s == ' ' || *s == '\t')
         ++s;
