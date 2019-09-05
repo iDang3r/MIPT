@@ -1,4 +1,4 @@
-//
+//  Problem - Onegin
 //  main.cpp
 //  DeD32
 //
@@ -40,7 +40,7 @@ int main() {
     q_sort(index, lines_num);
     
     output(name_out_f, index, lines_num);
-    printf("End of program\n");
+//    printf("End of program\n");
     return 0;
 }
 
